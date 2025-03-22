@@ -1,0 +1,28 @@
+{
+  "canisters": {
+    "DSTC_backend": {
+      "candid": "src/DSTC_backend/DSTC_backend.did",
+      "package": "DSTC_backend",
+      "type": "rust"
+    },
+    "icrc1_ledger_canister": {
+      "type": "custom",
+      "candid": "icrc1_ledger.did",
+      "wasm": "icrc1_ledger.wasm.gz"
+    },
+    "DSTC_frontend": {
+      "dependencies": ["DSTC_backend"],
+      "source": ["src/DSTC_frontend/dist"],
+      "type": "assets",
+      "workspace": "DSTC_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
